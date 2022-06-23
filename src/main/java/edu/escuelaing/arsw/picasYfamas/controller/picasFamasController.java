@@ -13,7 +13,7 @@ public class picasFamasController {
     String mensaje = "";
 
     @GetMapping("/juego")
-    public String hello(@RequestParam(value = "numero") Integer numero) {
+    public String playController(@RequestParam(value = "numero") Integer numero) {
 
         if (!picasFamasservice.isFinished()) {
             this.num = numero;
