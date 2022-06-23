@@ -11,16 +11,15 @@ public class picasFamasService {
     private int vidas;
     private List<Integer> listaNumeros = new ArrayList<>();
     private boolean victoria;
-    private int num;
 
     public picasFamasService() {
-        listaNumeros = generateRamdomNum();
+        generateRamdomNum();
     }
     
     public int determinaPica(int num, int pos, List<Integer> numero) {
         int devuelve = 0;
         for (int i = 0; i < 4; i++) {
-            if (num == numero.get(i) && pos != (i = 1)) {
+            if (num == numero.get(i) && pos != (i + 1)) {
                 devuelve = 1;
                 break;
             }
@@ -36,9 +35,13 @@ public class picasFamasService {
         n2 = ((num % 1000) / 100);
         n3 = (((num % 1000) % 100) / 10);
         n4 = (((num % 1000) % 100) % 10);
+        System.out.println(n1);
+        System.out.println(n2);
+        System.out.println(n3);
+        System.out.println(n4);
 
         if (n1 == listaNumeros.get(0) && n2 == listaNumeros.get(1) && n3 == listaNumeros.get(2) && n4 == listaNumeros.get(3)) {
-            famas++;
+            famas += 4;
             vidas--;
         } else {
             picas = picas + determinaPica(n1, 1, listaNumeros);
@@ -47,26 +50,28 @@ public class picasFamasService {
             picas = picas + determinaPica(n4, 4, listaNumeros);
 
             if (n1 == listaNumeros.get(0)) {
-                famas += 1;
-                vidas--;
+                famas ++;
+                
             }
             if (n2 == listaNumeros.get(1)) {
-                famas += 1;
-                vidas--;
+                famas ++;
+                
             }
             if (n3 == listaNumeros.get(2)) {
-                famas += 1;
-                vidas--;
+                famas ++;
+                
             }
             if (n4 == listaNumeros.get(3)) {
-                famas += 1;
-                vidas--;
+                famas ++;
+                
             }
+            vidas--;
         }
     }
         
     
     public List<Integer> generateRamdomNum() {
+        vidas = 6;
         listaNumeros.clear();
         Random ramdom = new Random();
         for (int i = 0; i < 4; i++) {
