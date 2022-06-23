@@ -18,14 +18,11 @@ public class picasFamasController {
         if (!picasFamasservice.isFinished()) {
             this.num = numero;
             picasFamasservice.play(numero);
-            System.out.println(picasFamasservice.getListaNumeros());
         } else {
             if (picasFamasservice.getVictoria()) {
                 mensaje = "ganaste";
-                System.out.println(mensaje);
             } else {
                 mensaje = "perdiste";
-                System.out.println(mensaje);
             }
         }
         return "{<div>" +
@@ -35,6 +32,7 @@ public class picasFamasController {
                 "<h3>" + picasFamasservice.getFamas() +
                 "<h3> vidas: </h3>" +
                 "<h3>" + picasFamasservice.getVidas() +
+                "<h3>" + mensaje +
                 "</div>}";
     }
 

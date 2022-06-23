@@ -11,7 +11,6 @@ public class picasFamasService {
     private int vidas;
     private List<Integer> listaNumeros = new ArrayList<>();
     private boolean victoria;
-
     private static picasFamasService picasFamasservice;
 
     private picasFamasService() {
@@ -45,14 +44,10 @@ public class picasFamasService {
         n2 = ((num % 1000) / 100);
         n3 = (((num % 1000) % 100) / 10);
         n4 = (((num % 1000) % 100) % 10);
-        System.out.println(n1);
-        System.out.println(n2);
-        System.out.println(n3);
-        System.out.println(n4);
 
         if (n1 == listaNumeros.get(0) && n2 == listaNumeros.get(1) && n3 == listaNumeros.get(2) && n4 == listaNumeros.get(3)) {
-            famas += 4;
-            vidas--;
+            famas = 4;
+            vidas --;
         } else {
             picas = picas + determinaPica(n1, 1, listaNumeros);
             picas = picas + determinaPica(n2, 2, listaNumeros);
@@ -93,10 +88,10 @@ public class picasFamasService {
 
     public boolean isFinished() {
         Boolean bandera = false;
-        if (getVidas() <= 0) {
+        if (getVidas() == 0) {
             bandera = true;
             victoria = false;
-        } else if (vidas > 0 && famas == 4) {
+        } else if (vidas > 0 && getFamas() == 4) {
             bandera = true;
             victoria = true;
         }
