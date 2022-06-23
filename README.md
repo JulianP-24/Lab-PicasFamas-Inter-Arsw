@@ -52,8 +52,6 @@ https://immense-reaches-02811.herokuapp.com/
 
 Para verificar el funcionamiento de la aplicacion en Heroku, solo se accede al link de heroku, mostrado anteriormente, como se muestra a continuacion:
 
-Para devolver el html, en el siguiente link
-
 ```
     https://immense-reaches-02811.herokuapp.com/
 ```
