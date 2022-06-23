@@ -10,8 +10,8 @@ public class PicasYfamasApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PicasYfamasApplication.class, args);
-		picasFamasService picasFamasService = new picasFamasService();
-		System.out.println(picasFamasService.generateRamdomNum());
+		picasFamasService picasFamasservice = picasFamasService.getInstance();
+		System.out.println(picasFamasservice.generateRamdomNum());
 		
 	}
 

@@ -12,8 +12,18 @@ public class picasFamasService {
     private List<Integer> listaNumeros = new ArrayList<>();
     private boolean victoria;
 
-    public picasFamasService() {
+    private static picasFamasService picasFamasservice;
+
+    private picasFamasService() {
         generateRamdomNum();
+    }
+
+    public static picasFamasService getInstance() {
+        if (picasFamasservice == null) {
+            picasFamasservice = new picasFamasService();
+        }
+
+        return picasFamasservice;
     }
     
     public int determinaPica(int num, int pos, List<Integer> numero) {

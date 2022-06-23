@@ -8,6 +8,7 @@ var Module = (function() {
             })
                 .then(response => response.text())
                 .then(res => document.getElementById("Resultado").innerHTML = res)
+            document.getElementById("form").reset();
         }
     }
 })();
